@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import ThemeProvider from '@material-ui/styles/ThemeProvider';
+import theme from './theme';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <AppBar color="primary">
+          <Toolbar>
+            <IconButton edge="start" color="inherit" aria-label="Menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6">
+              Jake Weidokal Portfolio
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </div>
+    </ThemeProvider>
   );
 }
 
